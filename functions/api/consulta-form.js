@@ -3,6 +3,10 @@
 // Recebe formulário de lead e notifica Discord
 // ============================================================
 
+export async function onRequestGet() {
+  return Response.redirect('https://www.farmaciaintegrativa.xyz/consulta-biofisica.html', 302);
+}
+
 export async function onRequestPost({ request, env }) {
   // Parse form data
   let nome = '', email = '', telefone = '', problema = '';
