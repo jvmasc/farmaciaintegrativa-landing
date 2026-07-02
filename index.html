@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agende sua Consulta Biofísica — Farmácia Clínica | João Alves CRF-SP 82.450</title>
+  <meta name="description" content="Consulta farmacêutica com abordagem biofísica. Não tratamos sintomas isolados — tratamos o terreno. Por João Vítor Alves, CRF-SP 82.450.">
+  <link rel="canonical" href="https://farmaciaintegrativa.xyz/consulta-biofisica/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://farmaciaintegrativa.xyz/consulta-biofisica/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Agende sua Consulta Biofísica — Farmácia Clínica | João Alves">
+  <meta property="og:description" content="Consulta farmacêutica com abordagem biofísica — não tratamos sintomas isolados, tratamos o terreno.">
+  <meta property="og:image" content="https://farmaciaintegrativa.xyz/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agende sua Consulta Biofísica — Farmácia Clínica">
+  <meta name="twitter:description" content="Consulta farmacêutica com abordagem biofísica. Tratamos o terreno, não os sintomas isolados.">
+  <meta name="twitter:image" content="https://farmaciaintegrativa.xyz/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════════
+       Biofísica Landing — Farmácia Integrativa
+       Paleta: terra/cobre (InDeGrow DNA)
+       Foco: lead capture para consulta biofísica
+       ══════════════════════════════════════════════════ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F2EDE4;
+      --surface: #FFFFFF;
+      --surface2: #EDE8DF;
+      --surface3: #E5DFD3;
+      --accent: #B5591A;
+      --accent-hover: #9C4B14;
+      --accent-soft: #D9A47A;
+      --accent-glow: rgba(181, 89, 26, 0.12);
+      --text: #1C2B2B;
+      --text-soft: #2C3E3D;
+      --muted: #5A7A72;
+      --muted2: #3D5C55;
+      --border: #D4CFC6;
+      --hairline: rgba(28, 43, 43, 0.14);
+      --shadow-sm: 0 1px 2px rgba(28, 43, 43, 0.06);
+      --shadow-md: 0 12px 28px -14px rgba(28, 43, 43, 0.18);
+      --shadow-lg: 0 30px 60px -24px rgba(28, 43, 43, 0.24);
+      --shadow-accent: 0 24px 50px -20px rgba(181, 89, 26, 0.40);
+      --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+      --maxw: 78rem;
+      --maxw-narrow: 54rem;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern", "liga", "calt";
+      overflow-x: clip;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    ::selection { background: var(--accent); color: #fff; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    /* ── Tipografia ── */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.65rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted2);
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: ""; display: block; width: 1.75rem; height: 1px;
+      background: var(--hairline);
+    }
+    .eyebrow.solo::after { display: none; }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    p { text-wrap: pretty; }
+
+    /* ── Containers ── */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1.25rem, 3vw, 3rem); }
+    .wrap-narrow { max-width: var(--maxw-narrow); margin: 0 auto; padding: 0 clamp(1.25rem, 3vw, 3rem); }
+    .alt-bg { background: var(--surface2); }
+
+    /* ── Animações ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: var(--shadow-accent); }
+      50% { box-shadow: 0 30px 70px -22px rgba(181, 89, 26, 0.55); }
+    }
+    .reveal { opacity: 0; }
+    .reveal.in { animation: fadeUp 0.9s var(--ease) forwards; }
+    .d1 { animation-delay: 80ms; }
+    .d2 { animation-delay: 160ms; }
+    .d3 { animation-delay: 240ms; }
+    .d4 { animation-delay: 320ms; }
+    .d5 { animation-delay: 400ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; }
+    }
+
+    /* ═══════════════ HERO ═══════════════ */
+    .hero {
+      position: relative;
+      padding: 8rem clamp(1.25rem, 3vw, 3rem) 5rem;
+      max-width: var(--maxw); margin: 0 auto;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(55% 42% at 50% 0%, rgba(181, 89, 26, 0.08), transparent 70%),
+        radial-gradient(35% 30% at 80% 55%, rgba(181, 89, 26, 0.05), transparent 70%);
+    }
+    .hero-eyebrow { margin-bottom: 2rem; }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 1.06;
+      margin-bottom: 1.5rem;
+      max-width: 22ch;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+      color: var(--muted2);
+      max-width: 46rem; line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+
+    .hero-trust {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 0.5rem 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+    .hero-trust span { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .hero-trust .dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    /* ── Botão ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      font-family: 'Inter', sans-serif; font-weight: 500;
+      font-size: 0.9rem; letter-spacing: 0.02em;
+      padding: 1.1rem 2rem;
+      border-radius: 8px;
+      border: none;
+      transition: all 0.25s var(--ease);
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      box-shadow: var(--shadow-accent);
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--hairline);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .cta-wrap {
+      display: flex; justify-content: center;
+      margin-top: 1rem;
+    }
+    .hero-cta {
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      padding: 1.25rem 2.5rem;
+      border-radius: 10px;
+    }
+
+    /* ═══════════════ SEÇÕES ═══════════════ */
+    section { padding: 5rem 0; }
+
+    .section-label {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 3.8vw, 3rem);
+      margin-bottom: 1.25rem;
+      max-width: 20ch;
+      margin-left: auto; margin-right: auto;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted2);
+      max-width: 36rem;
+      margin: 0 auto 3.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* ═══════════════ QUEM É JOÃO ═══════════════ */
+    .bio-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: clamp(2rem, 4vw, 3.5rem);
+      box-shadow: var(--shadow-md);
+      align-items: center;
+    }
+    @media (min-width: 780px) {
+      .bio-card { grid-template-columns: 180px 1fr; gap: 3rem; }
+    }
+    .bio-photo-wrap {
+      position: relative;
+      width: 160px; height: 160px;
+      margin: 0 auto;
+    }
+    .bio-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--accent),
+                  0 0 0 6px var(--surface),
+                  0 0 0 7px var(--hairline);
+    }
+    .bio-name {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+    .bio-crf {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted2); font-weight: 500;
+      margin-bottom: 1rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .bio-crf::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+    }
+    .bio-text {
+      font-size: 1rem;
+      color: var(--text-soft);
+      line-height: 1.75;
+    }
+    .bio-text strong { color: var(--text); font-weight: 500; }
+    .bio-refs {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+      margin-top: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .bio-refs span {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--surface2);
+      border-radius: 999px;
+    }
+    .bio-refs .ref-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .bio-legal {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      margin-top: 1.5rem; padding: 1rem 1.15rem;
+      background: var(--surface2); border-radius: 10px;
+      font-size: 0.78rem; color: var(--muted2); line-height: 1.55;
+    }
+    .bio-legal svg {
+      flex-shrink: 0; color: var(--accent); margin-top: 2px;
+    }
+
+    /* ═══════════════ COMO FUNCIONA ═══════════════ */
+    .steps-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .steps-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .step-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .step-card::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0; transition: opacity 0.35s var(--ease);
+    }
+    .step-card:hover::before { opacity: 1; }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem; font-weight: 600; font-style: italic;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .step-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--muted2);
+      line-height: 1.65;
+    }
+
+    .steps-disclaimer {
+      text-align: center; margin-top: 3rem;
+      font-size: 0.78rem; color: var(--muted);
+      max-width: 40rem; margin-left: auto; margin-right: auto;
+      font-style: italic;
+    }
+
+    /* ═══════════════ ABORDAGEM ═══════════════ */
+    .approach-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 780px) {
+      .approach-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .approach-card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      text-align: center;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .approach-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .approach-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--accent-glow);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 1.4rem;
+    }
+    .approach-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .approach-card p {
+      font-size: 0.9rem;
+      color: var(--muted2);
+      line-height: 1.65;
+    }
+
+    .approach-ref {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .approach-ref span { color: var(--accent); }
+
+    /* ═══════════════ FORMULÁRIO ═══════════════ */
+    .form-section {
+      padding: 5rem 0;
+    }
+    .form-card {
+      max-width: 44rem;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: clamp(2rem, 4vw, 3.5rem);
+      box-shadow: var(--shadow-lg);
+    }
+    .form-card h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+    .form-card > p {
+      text-align: center;
+      color: var(--muted2);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .form-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 600px) {
+      .form-row-2 { grid-template-columns: 1fr 1fr; }
+    }
+
+    .form-submit {
+      margin-top: 2rem;
+    }
+    .form-submit .btn {
+      width: 100%;
+      padding: 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .form-note {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .disclaimer-box {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 1rem 1.15rem;
+      background: var(--surface2);
+      border-radius: 10px;
+      font-size: 0.78rem;
+      color: var(--muted2);
+      line-height: 1.55;
+      margin-top: 1.5rem;
+    }
+    .disclaimer-box svg {
+      flex-shrink: 0; color: var(--accent); margin-top: 2px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .form-success.show { display: block; }
+    .form-success h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+    }
+    .form-success p { color: var(--muted2); }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    footer {
+      border-top: 1px solid var(--hairline);
+      background: var(--surface2);
+      padding: 3rem 0 2rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .footer-brand span { color: var(--accent); font-style: italic; }
+    .footer-crf {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-legal a:hover { color: var(--accent); }
+
+    /* ═══════════════ RESPONSIVO ═══════════════ */
+    @media (max-width: 480px) {
+      .hero { padding: 6rem 1.25rem 3.5rem; }
+      section { padding: 3.5rem 0; }
+      .hero-trust { flex-direction: column; align-items: center; gap: 0.4rem; }
+      .bio-refs { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <header class="hero">
+    <span class="eyebrow hero-eyebrow">CRF-SP 82.450 · Farmácia Clínica</span>
+
+    <h1>
+      Agende sua <em>consulta biofísica</em>
+    </h1>
+
+    <p class="hero-sub">
+      Farmácia clínica com abordagem biofísica — <strong>não tratamos sintomas isolados, tratamos o terreno</strong>.
+      Cada organismo tem uma história bioquímica única. A consulta descobre a sua.
+    </p>
+
+    <div class="hero-trust">
+      <span><span class="dot"></span>Remoto ou presencial</span>
+      <span><span class="dot"></span>Protocolo personalizado</span>
+      <span><span class="dot"></span>Análise do terreno metabólico</span>
+    </div>
+
+    <div class="cta-wrap">
+      <a href="#form" class="btn btn-primary hero-cta">
+        Agende sua avaliação
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════ QUEM É JOÃO ═══════════════ -->
+    <section class="alt-bg" aria-label="Farmacêutico responsável">
+      <div class="wrap reveal">
+        <div class="section-label">
+          <span class="eyebrow solo">Farmacêutico Responsável</span>
+        </div>
+
+        <article class="bio-card">
+          <div class="bio-photo-wrap">
+            <img src="foto-joao.jpg" alt="João Vítor Alves — Farmacêutico Clínico CRF-SP 82.450" class="bio-photo" width="160" height="160" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <h2 class="bio-name">João Vítor Alves</h2>
+            <p class="bio-crf">Farmacêutico Clínico · CRF-SP 82.450</p>
+            <div class="bio-text">
+              <p><strong>Farmacêutico clínico com abordagem biofísica-primeiro.</strong> Sua prática clínica se fundamenta na compreensão do <strong>terreno metabólico</strong> — o ambiente celular onde a saúde se organiza ou se desorganiza.</p>
+              <br>
+              <p>Inspirado pelos trabalhos de <strong>Kruse</strong> (biofísica da água e sinalização celular), <strong>Picolin</strong> (campos eletromagnéticos e modulação tecidual) e <strong>Pollack</strong> (água interfacial EZ e exclusão de solutos), João integra a biofísica à prática farmacêutica clínica para oferecer uma leitura mais profunda do organismo.</p>
+              <br>
+              <p>Não se trata de mais um diagnóstico — trata-se de entender <em>por que</em> o terreno permitiu que o processo se instalasse, e <em>como</em> modular esse terreno para restaurar a capacidade de auto-regulação do corpo.</p>
+            </div>
+            <div class="bio-refs">
+              <span><span class="ref-dot"></span>Gerald Pollack — EZ Water</span>
+              <span><span class="ref-dot"></span>Thomas Kruse — Biofísica Celular</span>
+              <span><span class="ref-dot"></span>Picolin — Eletromagnetismo Clínico</span>
+            </div>
+            <div class="bio-legal">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 0L1.5 2.5v5C1.5 11 4.4 14.4 8 16c3.6-1.6 6.5-5 6.5-8.5v-5L8 0zm-1 11L4 8l1-1 2 2 4-4 1 1-5 5z"/>
+              </svg>
+              <span>Documentos emitidos sob responsabilidade técnica exclusiva do farmacêutico registrado no CRF-SP — RDC/CFF 638/2021 (telefarmácia) e Res. CFF 586/2013 (responsabilidade técnica).</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABORDAGEM ═══════════════ -->
+    <section aria-label="Abordagem biofísica">
+      <div class="wrap-narrow reveal">
+        <div class="section-label">
+          <span class="eyebrow solo">A Abordagem</span>
+        </div>
+        <h2 class="section-title">Biofísica-primeiro: o que significa?</h2>
+        <p class="section-sub">
+          A biofísica estuda os princípios físicos que governam os sistemas vivos. Na prática clínica, isso significa olhar além dos biomarcadores convencionais.
+        </p>
+
+        <div class="approach-grid">
+          <article class="approach-card">
+            <div class="approach-icon">🌊</div>
+            <h3>Água Interfacial (EZ)</h3>
+            <p>A água no corpo não é apenas solvente — é estrutura. A água interfacial (Zona de Exclusão de Pollack) é o meio onde as proteínas funcionam, os sinais se propagam e a energia celular se organiza.</p>
+          </article>
+          <article class="approach-card">
+            <div class="approach-icon">⚡</div>
+            <h3>Sinalização Eletromagnética</h3>
+            <p>Todo processo biológico é elétrico. Potenciais de membrana, campos mitocondriais e comunicação celular seguem princípios biofísicos que a abordagem integrativa tradicional frequentemente ignora.</p>
+          </article>
+          <article class="approach-card">
+            <div class="approach-icon">🌱</div>
+            <h3>Terreno Metabólico</h3>
+            <p>O terreno é o conjunto de condições — pH, redox, hidratação interfacial, carga eletromagnética — que determina se a célula consegue ou não se manter saudável. Mudar o terreno muda o desfecho.</p>
+          </article>
+        </div>
+
+        <p class="approach-ref">
+          Referencial teórico: <span>Pollack</span> · <span>Kruse</span> · <span>Picolin</span> · <span>Ling</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════ COMO FUNCIONA ═══════════════ -->
+    <section class="alt-bg" aria-label="Como funciona a consulta">
+      <div class="wrap-narrow reveal">
+        <div class="section-label">
+          <span class="eyebrow solo">Como Funciona</span>
+        </div>
+        <h2 class="section-title">Da sua inscrição ao protocolo personalizado</h2>
+        <p class="section-sub">
+          Remoto ou presencial. Você preenche, João analisa, você recebe um plano feito para o seu terreno.
+        </p>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Inscreva-se</h3>
+            <p class="step-desc">Preencha o formulário com seus dados e conte qual é o seu principal problema de saúde. Sem compromisso inicial.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Triagem Biofísica</h3>
+            <p class="step-desc">João analisa seu caso, seus exames (se houver) e define se a abordagem biofísica é indicada para o seu terreno.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Consulta</h3>
+            <p class="step-desc">Remota (videochamada) ou presencial. João traça seu perfil biofísico e elabora um protocolo personalizado de modulação do terreno.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">04</div>
+            <h3 class="step-title">Acompanhamento</h3>
+            <p class="step-desc">Protocolo entregue com KPIs mensuráveis e data de reavaliação. Ajustes conforme a evolução do seu organismo.</p>
+          </article>
+        </div>
+
+        <p class="steps-disclaimer">Consulta farmacêutica — não substitui consulta médica. Este serviço é complementar ao acompanhamento com seu médico de referência.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FORMULÁRIO ═══════════════ -->
+    <section class="form-section" id="form" aria-label="Agende sua consulta">
+      <div class="wrap-narrow reveal">
+        <div class="form-card" id="formCard">
+          <h2>Agende sua avaliação</h2>
+          <p>Deixe seus dados. João entra em contato para entender seu caso e agendar sua consulta biofísica.</p>
+
+          <form id="consultaForm" action="/api/consulta-form" method="POST">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="nome">Nome *</label>
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telefone">Telefone *</label>
+              <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-8888">
+            </div>
+
+            <div class="form-group">
+              <label for="problema">Qual seu principal problema de saúde? *</label>
+              <textarea id="problema" name="problema" required placeholder="Conte um pouco sobre o que você está sentindo, há quanto tempo, e o que já tentou..."></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">
+                Agende sua avaliação
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            <p class="form-note">Seus dados estão seguros. Não compartilhamos informações com terceiros.</p>
+          </form>
+
+          <div class="disclaimer-box">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 12H7V7h2v5zm0-6H7V4h2v2z"/>
+            </svg>
+            <span><strong>Disclaimer obrigatório (CFF):</strong> Esta é uma consulta farmacêutica clínica, regulamentada pelo Conselho Federal de Farmácia (CFF). <strong>Não substitui consulta médica.</strong> O farmacêutico clínico atua em complementaridade ao médico, oferecendo análise do terreno metabólico, revisão farmacoterapêutica e protocolos de modulação dentro das atribuições clínicas do farmacêutico (Res. CFF 586/2013 e RDC/CFF 638/2021).</span>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <h3>Recebemos sua solicitação ✓</h3>
+            <p>Obrigado! João Vítor Alves analisará seu caso e entrará em contato em até <strong>48 horas úteis</strong> para agendar sua consulta biofísica.</p>
+            <br>
+            <p style="font-size: 0.85rem; color: var(--muted);">Enquanto isso, você pode conhecer mais sobre a abordagem biofísica no <a href="https://farmaciaintegrativa.xyz" style="color: var(--accent); text-decoration: underline;">site da farmácia clínica</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-brand">In<span>De</span>Grow</div>
+        <div class="footer-crf">João Vítor Alves · Farmacêutico Clínico · CRF-SP 82.450</div>
+        <div class="footer-legal">
+          <span>RDC/CFF 638/2021</span>
+          <span>Res. CFF 586/2013</span>
+          <span>© 2026 InDeGrow</span>
+          <a href="https://farmaciaintegrativa.xyz/lgpd.html">Privacidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var form = document.getElementById('consultaForm');
+      var formCard = document.getElementById('formCard');
+      var successDiv = document.getElementById('formSuccess');
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          var submitBtn = form.querySelector('button[type="submit"]');
+          var originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = 'Enviando…';
+          submitBtn.disabled = true;
+
+          var formData = new URLSearchParams();
+          formData.append('nome', document.getElementById('nome').value);
+          formData.append('email', document.getElementById('email').value);
+          formData.append('telefone', document.getElementById('telefone').value);
+          formData.append('problema', document.getElementById('problema').value);
+
+          fetch(form.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: formData.toString()
+          })
+          .then(function(response) {
+            if (response.ok) {
+              form.style.display = 'none';
+              successDiv.classList.add('show');
+            } else {
+              return response.text().then(function(text) {
+                throw new Error(text || 'Erro no servidor');
+              });
+            }
+          })
+          .catch(function(err) {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            alert('Ops! Ocorreu um erro ao enviar: ' + err.message + '\n\nTente novamente ou entre em contato direto pelo WhatsApp.');
+          });
+        });
+      }
+
+      // Year
+      var yrEl = document.querySelector('.footer-legal');
+      if (yrEl) {
+        yrEl.innerHTML = yrEl.innerHTML.replace('2026', new Date().getFullYear());
+      }
+
+      // Scroll reveal
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
